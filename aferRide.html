@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ride Details</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f1f8ff;
+            color: #333;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            max-width: 900px;
+            padding: 40px;
+            margin-top: 20px;
+        }
+        .container:hover {
+            transform: scale(1.02);
+        }
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            background: linear-gradient(90deg, #2196f3, #42a5f5);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 35px;
+            text-align: left;
+        }
+        .header h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        .header p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.85);
+            margin: 2px 0;
+        }
+        .header .verified {
+            background-color: #ffeb3b;
+            color: #333;
+            font-weight: bold;
+            padding: 6px 18px;
+            border-radius: 22px;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+        .ride-details {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+        .ride-details h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .ride-details p {
+            font-size: 16px;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+        .ride-details p strong {
+            color: #2196f3;
+            font-weight: bold;
+        }
+        .button {
+            background: linear-gradient(90deg, #2196f3, #42a5f5);
+            color: white;
+            border: none;
+            padding: 16px;
+            font-size: 18px;
+            border-radius: 12px;
+            width: 100%;
+            cursor: pointer;
+            text-align: center;
+            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        .button:hover {
+            background: linear-gradient(90deg, #42a5f5, #1e88e5);
+            transform: translateY(-6px);
+        }
+        .button:active {
+            background: linear-gradient(90deg, #1976d2, #42a5f5);
+            transform: translateY(0);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 35px;
+            color: #888;
+            font-size: 14px;
+        }
+        .footer p {
+            margin: 0;
+        }
+        .footer a {
+            color: #2196f3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Queries for Laptop and Desktop */
+        @media (min-width: 768px) {
+            .container {
+                padding: 60px;
+            }
+            .header h2 {
+                font-size: 40px;
+            }
+            .ride-details h3 {
+                font-size: 26px;
+            }
+            .ride-details p {
+                font-size: 18px;
+            }
+            .button {
+                padding: 18px;
+                font-size: 20px;
+            }
+        }
+
+        /* Mobile responsive adjustments */
+        @media (max-width: 767px) {
+            body {
+                align-items: center;
+            }
+            .container {
+                max-width: 100%;
+                padding: 20px;
+            }
+            .header h2 {
+                font-size: 28px;
+            }
+            .ride-details h3 {
+                font-size: 22px;
+            }
+            .ride-details p {
+                font-size: 14px;
+            }
+            .button {
+                padding: 14px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head> 
+<body>
+
+<div class="container">
+    <!-- Driver Info Section -->
+    <div class="header">
+        <h2>Ravi Kumar</h2>
+        <p>Rating: 4.8/5 (32 ratings)</p>
+        <p>Vehicle: Mahindra XUV700 (Silver)</p>
+        <p class="verified">Verified Profile</p>
+    </div>
+
+    <!-- Ride Details Section -->
+    <div class="ride-details">
+      <h3>Ride Details</h3>
+      <p><strong>Start Point:</strong> Connaught Place, New Delhi</p>
+      <p><strong>End Point:</strong> Taj Mahal, Agra</p>
+      <p><strong>Intermediate Stops:</strong> Lotus Temple, India Gate, Qutub Minar</p>
+      <p><strong>Distance:</strong> 230 km</p>
+      <p><strong>Estimated Time:</strong> 5 hours</p>
+      <p><strong>Price:</strong> ₹1200</p>
+  </div>
+  
+  
+    <!-- Travel Restrictions Section -->
+    <div class="ride-details">
+        <h3>Travel Restrictions</h3>
+        <p><strong>No Pets Allowed</strong></p>
+        <p><strong>No Smoking Policy</strong></p>
+    </div>
+
+    <!-- Booking Section -->
+    <button class="button" onclick="bookRide()">Book Ride</button>
+</div>
+
+<script>
+    // Function to book the ride
+    function bookRide() {
+        alert('Your booking is confirmed!');
+    }
+</script>
+
+</body>
+</html>
